@@ -22,8 +22,6 @@ type SettingsTabsStr = keyof typeof SettingsTabs
 const settingsTabsArr: SettingsTabsStr[] = [
     'ACCOUNT',
     'NOTIFICATIONS',
-    'LIKES_AND_PREFERENCES',
-    'SECURITY_AND_PRIVACY',
     'WALLET',
 ]
 

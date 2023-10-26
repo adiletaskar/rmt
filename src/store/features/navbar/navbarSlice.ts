@@ -2,7 +2,6 @@ import { navbarType } from '@/types'
 import { createSlice } from '@reduxjs/toolkit'
 export interface NavbarState {
     navbarItems: navbarType[]
-    marketPlaceNavbar: navbarType[]
 }
 const initialState: NavbarState = {
     navbarItems: [
@@ -11,34 +10,14 @@ const initialState: NavbarState = {
         {
             id: 3,
             name: 'Marketplace',
-            link: '/marketplace/rankings',
+            link: '/marketplace',
             isActive: false,
         },
         { id: 4, name: 'Settings', link: '/settings', isActive: false },
-    ],
-    marketPlaceNavbar: [
         {
-            id: 1,
-            name: 'Rankings',
-            link: '/marketplace/rankings',
-            isActive: true,
-        },
-        {
-            id: 2,
-            name: 'Launchpad',
-            link: '/marketplace/launchpad',
-            isActive: false,
-        },
-        {
-            id: 3,
-            name: 'Opportunities',
-            link: '/marketplace/opportunities',
-            isActive: false,
-        },
-        {
-            id: 4,
-            name: 'Gainers & Loosers',
-            link: '/marketplace/gainers',
+            id: 5,
+            name: 'Your Channel',
+            link: '/channel/1/content',
             isActive: false,
         },
     ],
@@ -56,16 +35,9 @@ const navbarSlice = createSlice({
             })
             state.navbarItems = newArr
         },
-        setMarketActive: (state, { payload }) => {
-            const newArr = state.marketPlaceNavbar.map((item) => {
-                if (item.id !== payload) return { ...item, isActive: false }
-                else return { ...item, isActive: true }
-            })
-            state.marketPlaceNavbar = newArr
-        },
     },
 })
 
-export const { setNavbarActive, setMarketActive } = navbarSlice.actions
+export const { setNavbarActive } = navbarSlice.actions
 
 export default navbarSlice.reducer

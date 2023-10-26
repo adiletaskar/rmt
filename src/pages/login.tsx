@@ -44,9 +44,7 @@ const LoginPage = () => {
                 const accounts = await window.ethereum.enable()
                 setAccount(accounts[0])
             }
-            if (document.fullscreenEnabled) {
-                document.documentElement.requestFullscreen()
-            }
+        
         } catch (error) {
             console.error(error)
         } finally {

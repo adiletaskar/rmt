@@ -44,7 +44,7 @@ const SettingsAccount = (props: Props) => {
                             src={avatar}
                         />
                         <span className={style.profile_link}>
-                            nimbl.tv/username
+                            username
                         </span>
                     </div>
                     <ul className={style.profile_settings__list}>
